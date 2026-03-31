@@ -4,7 +4,7 @@ const app = express();
 const path = require("node:path");
 const session = require("express-session");
 const passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
+require("./config/passport")(passport);
 
 // Routers
 const indexRouter = require("./routes/indexRouter");
