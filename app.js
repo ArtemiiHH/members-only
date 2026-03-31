@@ -2,6 +2,9 @@
 const express = require("express");
 const app = express();
 const path = require("node:path");
+const session = require("express-session");
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
 
 // Routers
 const indexRouter = require("./routes/indexRouter");
@@ -14,8 +17,12 @@ app.set("view engine", "ejs");
 
 // Read static files
 app.use(express.static("public"));
+
+// Setup passport
+app.use(session({ secret: "cats", resave: false, saveUninitialized: false }));
+app.use(passport.session());
 // Parse URL form data
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 
 // Routes
 app.use("/", indexRouter);
