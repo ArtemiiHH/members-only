@@ -4,6 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log In</title>
+    <link rel="stylesheet" href="/styles/form.css" />
   </head>
-  <body></body>
+  <body>
+    <!-- Log In Form -->
+    <form action="/log-in" method="POST">
+      <h2>Log In</h2>
+
+      <label for="username">Username:</label>
+      <input
+        id="username"
+        name="username"
+        class="form-input"
+        placeholder="jd123"
+        type="text"
+      />
+
+      <label for="password">Password:</label>
+      <input
+        id="password"
+        name="password"
+        class="form-input"
+        placeholder="Password"
+        type="password"
+      />
+
+      <!-- Form Buttons -->
+      <div class="form-btns">
+        <!-- Sign Up -->
+        <button type="submit">Log In</button>
+
+        <!-- Back to home -->
+        <a href="/">
+          <button type="button">Back to home</button>
+        </a>
+      </div>
+    </form>
+  </body>
 </html>
