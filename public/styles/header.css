@@ -1,0 +1,10 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: red;
+}
+
+.header-btn-group {
+  display: flex;
+  gap: 30px;
+}
