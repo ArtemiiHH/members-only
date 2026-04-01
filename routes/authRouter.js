@@ -1,7 +1,6 @@
 const { Router } = require("express");
 const auth = Router();
 const authController = require("../controllers/authController");
-const passport = require("passport");
 
 // Render Forms
 auth.get("/signup", authController.renderSignUpForm);

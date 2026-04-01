@@ -12,19 +12,25 @@
       <!-- Logo -->
       <h1 class="header-logo">Members Only Club</h1>
 
-      <!-- Buttons -->
-      <div class="header-btn-group">
-
-        <!-- Log In -->
-        <a href="/login">
-          <button class="log-in-btn">Log In</button>
+      <% if (user) { %>
+        <a href="/logout">
+          <button class="log-out-btn">Log Out</button>
         </a>
+      <% } else { %>
+        <!-- Buttons -->
+        <div class="header-btn-group">
 
-        <!-- Sign Up -->
-        <a href="/signup">
-          <button class="sign-up-btn">Sign Up</button>
-        </a>
-      </div>
+          <!-- Log In -->
+          <a href="/login">
+            <button class="log-in-btn">Log In</button>
+          </a>
+
+          <!-- Sign Up -->
+          <a href="/signup">
+            <button class="sign-up-btn">Sign Up</button>
+          </a>
+        </div>
+      <% } %>
     </header>
   </body>
 </html>
