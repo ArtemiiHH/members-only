@@ -45,7 +45,12 @@ exports.renderLogInForm = async function (req, res) {
 
 // Handle Form Submission (POST)
 exports.handleLogInSubmission = async function (req, res) {
-  res.redirect("/");
+  try {
+    res.redirect("/");
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
 };
 
 // Log Out
