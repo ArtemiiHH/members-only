@@ -11,6 +11,9 @@ exports.renderSignUpForm = async function (req, res) {
 };
 
 // Handle Form Submission (POST)
+exports.handleSignUpSubmission = async function (req, res) {
+  res.redirect("/");
+};
 
 // Log In
 // Render Log In Form (GET)
@@ -19,6 +22,9 @@ exports.renderLogInForm = async function (req, res) {
 };
 
 // Handle Form Submission (POST)
+exports.handleLogInSubmission = async function (req, res) {
+  res.redirect("/");
+};
 
 // Log Out
 // Handle Log Out
