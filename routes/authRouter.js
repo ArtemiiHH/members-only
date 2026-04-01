@@ -1,14 +1,12 @@
 const { Router } = require("express");
 const auth = Router();
+const authController = require("../controllers/authController");
 
-auth.get("/sign-up", (req, res) => {
-  res.render("sign-up-form");
-});
+// Render Forms
+auth.get("/sign-up", authController.renderSignUpForm);
+auth.get("/log-in", authController.renderLogInForm);
 auth.post("/sign-up", (req, res) => {
   res.redirect("/");
-});
-auth.get("/log-in", (req, res) => {
-  res.render("log-in-form");
 });
 auth.post("/log-in", (req, res) => {
   res.redirect("/posts");
