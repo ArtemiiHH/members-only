@@ -11,8 +11,30 @@ exports.renderSignUpForm = async function (req, res) {
 };
 
 // Handle Form Submission (POST)
-exports.handleSignUpSubmission = async function (req, res) {
-  res.redirect("/");
+exports.handleSignUpSubmission = async function (req, res, next) {
+  try {
+    // Destructure req.body
+    const { firstName, lastName, username, email, password } = req.body;
+    // Hash password
+    const hashedPassword = await bcrypt.hash(password, 10);
+    // New User Object
+    const newUser = {
+      firstName,
+      lastName,
+      username,
+      email,
+      password: hashedPassword,
+    };
+
+    // Add New User Object into DB
+    await db.addUsersDataToDb(newUser);
+
+    // Redirect back to Home
+    res.redirect("/");
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
 };
 
 // Log In
