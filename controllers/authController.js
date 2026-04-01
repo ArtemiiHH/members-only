@@ -1,21 +1,18 @@
-const pool = require("../db/pool");
+const db = require("../db/queries");
+const bcrypt = require("bcryptjs");
+const path = require("node:path");
+const session = require("express-session");
+const passport = require("passport");
 
-// GET USERS USERNAME AND PASSWORD
-exports.addUserDataToDb = async function (
-  firstName,
-  lastName,
-  username,
-  email,
-  password,
-) {
-  await pool.query(
-    "INSERT INTO members (first_name, last_name, username, email, password) VALUES ($1, $2, $3, $4, $5)",
-    [
-      req.body.firstName,
-      req.body.lastName,
-      req.body.username,
-      req.body.email,
-      req.body.password,
-    ],
-  );
-};
+// Sign Up
+// Render Sign Up Form (GET)
+
+// Handle Form Submission (POST)
+
+// Log In
+// Render Log In Form (GET)
+
+// Handle Form Submission (POST)
+
+// Log Out
+// Handle Log Out
