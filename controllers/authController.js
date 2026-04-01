@@ -44,9 +44,34 @@ exports.renderLogInForm = async function (req, res) {
 };
 
 // Handle Form Submission (POST)
-exports.handleLogInSubmission = async function (req, res) {
+exports.handleLogInSubmission = async function (req, res, next) {
   try {
-    res.redirect("/");
+    // Destructure req.body
+    const { username, password } = req.body;
+    // Get User from DB
+    const user = await db.getUserByUsername(username);
+
+    // Check if user exists
+    if (!user) {
+      return res.redirect("/login");
+    }
+
+    // Compare passwords
+    const match = await bcrypt.compare(password, user.password);
+
+    // Compare password against hash
+    if (!match) {
+      return res.redirect("/login");
+    }
+
+    // Log In User
+    req.login(user, (err) => {
+      if (err) {
+        return next(err);
+      }
+
+      res.redirect("/");
+    });
   } catch (error) {
     console.error(error);
     next(error);
