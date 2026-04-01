@@ -5,6 +5,7 @@ const authController = require("../controllers/authController");
 // Render Forms
 auth.get("/sign-up", authController.renderSignUpForm);
 auth.get("/log-in", authController.renderLogInForm);
+auth.get("/log-out", authController.handleLogOut);
 
 // Handle Form Submission
 auth.post("/sign-up", authController.handleSignUpSubmission);

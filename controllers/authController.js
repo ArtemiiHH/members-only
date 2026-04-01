@@ -28,3 +28,12 @@ exports.handleLogInSubmission = async function (req, res) {
 
 // Log Out
 // Handle Log Out
+exports.handleLogOut = async function (req, res, next) {
+  req.logout((err) => {
+    if (err) {
+      return next(err);
+    }
+
+    res.redirect("/");
+  });
+};
