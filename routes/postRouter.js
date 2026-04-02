@@ -1,8 +1,8 @@
 const { Router } = require("express");
 const post = Router();
+const postController = require("../controllers/postController");
 
-post.get("/post", (req, res) => {
-  res.render("post");
-});
+// Render Form
+post.get("/posts/new", postController.renderPostForm);
 
 module.exports = post;

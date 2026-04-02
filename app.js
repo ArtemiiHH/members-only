@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 // Routes
 app.use("/", indexRouter);
 app.use("/", authRouter);
-app.use("/post", postRouter);
+app.use("/", postRouter);
 
 // Server
 const PORT = process.env.PORT || 3000;

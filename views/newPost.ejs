@@ -6,8 +6,40 @@
     <title>New Post</title>
   </head>
   <body>
-    <h1>Create post</h1>
+    <!-- New Post Form -->
+    <form action="/posts" method="POST">
+      <h2>Create new post</h2>
 
-    <form action="/post/new"></form>
+      <label for="title">Title:</label>
+      <input
+        id="title"
+        name="title"
+        class="form-input"
+        placeholder="Title"
+        type="text"
+      />
+
+      <label for="message">Message:</label>
+      <input
+        id="message"
+        name="message"
+        class="form-input"
+        placeholder="Your text here..."
+        type="text"
+      />
+
+      <!-- Form Buttons -->
+      <div class="form-btns">
+        <!-- Post -->
+        <a href="/">
+          <button type="submit">Post</button>
+        </a>
+
+        <!-- Cancel -->
+        <a href="/">
+          <button type="button">Cancel</button>
+        </a>
+      </div>
+    </form>
   </body>
 </html>
