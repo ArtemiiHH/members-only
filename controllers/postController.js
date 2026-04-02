@@ -8,14 +8,14 @@ exports.renderPostForm = async function (req, res) {
 // Handle Form Submission (POST)
 exports.handleNewPostSubmission = async function (req, res, next) {
   try {
+    const memberId = req.user.id;
     // Destructure req.body
-    const { member_id, title, message, created_at } = req.body;
+    const { title, message } = req.body;
     // New Post Object
     const newPost = {
-      member_id,
+      memberId,
       title,
       message,
-      created_at,
     };
 
     // Add New Post Object into DB

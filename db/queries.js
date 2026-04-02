@@ -64,7 +64,7 @@ exports.getPostsById = async function (id) {
 // ADD POSTS DATA TO DB
 exports.addPostsDataToDb = async function (newPost) {
   await pool.query(
-    "INSERT INTO posts (member_id, title, message, created_at) VALUES ($1, $2, $3, $4)",
-    [newPost.member_id, newPost.title, newPost.message, newPost.created_at],
+    "INSERT INTO posts (member_id, title, message) VALUES ($1, $2, $3)",
+    [newPost.memberId, newPost.title, newPost.message],
   );
 };
