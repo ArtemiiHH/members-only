@@ -12,7 +12,23 @@
 
     <!-- Main -->
     <section>
-      <h1>Hello world</h1>
+      
+      <!-- User Not Logged In -->
+      <% if (!user) { %>
+        <!-- Log In Disclaimer -->
+        <div class="disclaimer">
+          <p>
+            You need to <a href="/login">log in</a> in order to create a post.
+          </p>
+        </div>
+        <h1>Posts</h1>
+      <% } else { %>
+        <!-- User Logged In -->
+        <a href="/post">
+          <button class="create-post-btn">+ Create post</button>
+        </a>
+        <h1>Posts</h1>
+      <% } %>
     </section>
 
     <!-- Footer -->
