@@ -4,3 +4,6 @@ const db = require("../db/queries");
 exports.renderPostForm = async function (req, res) {
   res.render("newPost");
 };
+
+// Handle Form Submission (POST)
+exports.handleNewPostSubmission = async function (req, res) {};

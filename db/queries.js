@@ -34,3 +34,19 @@ exports.addUsersDataToDb = async function (newUser) {
     ],
   );
 };
+
+// GET POST BY ID
+exports.getPostsById = async function (id) {
+  const { rows } = await pool.query("SELECT * FROM posts WHERE id = $1", [id]);
+
+  // Return single post
+  return rows[0];
+};
+
+// ADD POSTS DATA TO DB
+exports.addPostsDataToDb = async function (newPost) {
+  await pool.query("INSERT INTO posts (title, message) VALUES ($1, $2)", [
+    newPost.title,
+    newPost.message,
+  ]);
+};

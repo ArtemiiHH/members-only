@@ -21,7 +21,14 @@
             You need to <a href="/login">log in</a> in order to create a post.
           </p>
         </div>
-        <h1>Posts</h1>
+
+        <!-- Post -->
+        <% posts.forEach(post => { %>
+          <div class="post">
+            <h3><%= post.title %></h3>
+            <p><%= post.message %></p>
+          </div>
+        <% }) %>
       <% } else { %>
         <!-- User Logged In -->
         <a href="/posts/new">
