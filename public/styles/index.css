@@ -1,7 +1,7 @@
 /* Login Disclaimer */
 .disclaimer {
   background-color: rgb(34, 34, 34);
-  padding: 20px;
+  padding: 20px 50px;
   border: none;
   border-left: 7px solid rgb(70, 70, 70);
 }
@@ -13,4 +13,8 @@
 
 .disclaimer a:hover {
   opacity: 0.8;
+}
+
+.create-post-btn {
+  margin: 10px 50px;
 }

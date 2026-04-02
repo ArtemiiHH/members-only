@@ -14,7 +14,7 @@
 
     <!-- Main -->
     <section>
-      
+
       <!-- User Not Logged In -->
       <% if (!user) { %>
         <!-- Log In Disclaimer -->
@@ -23,10 +23,12 @@
             You need to <a href="/login">log in</a> in order to create a post.
           </p>
         </div>
+        <h1 class="latest-posts-text">Latest posts</h1>
       <% } else { %>
+        <h1 class="latest-posts-text">Latest posts</h1>
         <!-- User Logged In -->
         <a href="/posts/new">
-          <button class="create-post-btn">+ Create post</button>
+          <button class="header-btn create-post-btn">+ CREATE POST</button>
         </a>
       <% } %>
 
@@ -52,6 +54,8 @@
                 </div>
               <% } %>
             </div>
+
+            <hr>
 
             <!-- Users Text -->
             <div class="users-text">

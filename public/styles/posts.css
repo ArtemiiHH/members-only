@@ -1,17 +1,24 @@
+.latest-posts-text {
+  padding: 10px 50px;
+}
+
 .post-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 50px;
+  padding: 20px 50px;
+  height: 100vh;
 }
 
 .post {
   display: flex;
   flex-direction: column;
-  background-color: gray;
-  border: 1px solid black;
+  background-color: black;
+  border: 1px solid rgb(20, 20, 20);
   border-radius: 20px;
-  gap: 30px;
+  padding: 20px;
+  width: 300px;
+  height: 200px;
 }
 
 .users-info {
@@ -21,14 +28,23 @@
   flex-direction: column;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  padding: 20px;
+  padding: 0;
 }
 
 .users-text {
-  padding: 20px;
+  padding: 0;
+}
+
+.users-text h2 {
+  padding-bottom: 20px;
 }
 
 .first-last-names {
   display: flex;
   gap: 20px;
+}
+
+hr {
+  width: 100%;
+  border: 1px solid rgb(20, 20, 20);
 }
