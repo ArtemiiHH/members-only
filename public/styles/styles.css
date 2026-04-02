@@ -19,18 +19,6 @@ a {
   text-decoration: none;
 }
 
-/* Login Disclaimer */
-.disclaimer {
-  background-color: rgb(34, 34, 34);
-  padding: 20px;
-  border: none;
-  border-left: 7px solid rgb(70, 70, 70);
-}
-
-.disclaimer a {
-  color: rgb(5, 118, 156);
-  text-decoration: underline;
-}
-.disclaimer a:hover {
-  opacity: 0.8;
+.container {
+  padding: 50px 20px;
 }

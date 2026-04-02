@@ -2,7 +2,6 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  border-bottom: 1px solid rgb(49, 49, 49);
   align-items: center;
 }
 
