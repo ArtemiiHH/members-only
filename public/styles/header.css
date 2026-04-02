@@ -1,9 +1,32 @@
 header {
   display: flex;
   justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid rgb(49, 49, 49);
+  align-items: center;
+}
+
+.header-logo {
+  color: white;
 }
 
 .header-btn-group {
   display: flex;
   gap: 30px;
+}
+
+.header-btn {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 30px;
+  border: 1px solid rgb(20, 20, 20);
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  transition: 0.3s;
+}
+
+.header-btn:hover {
+  background-color: rgb(20, 20, 20);
+  cursor: pointer;
 }

@@ -10,11 +10,11 @@
     <!-- Header -->
     <header>
       <!-- Logo -->
-      <h1 class="header-logo">Members Only Club</h1>
+      <a href="/"><h1 class="header-logo">🔑Members Only Club</h1></a>
 
       <% if (user) { %>
         <a href="/logout">
-          <button class="log-out-btn">Log Out</button>
+          <button class="header-btn log-out-btn">Log Out</button>
         </a>
       <% } else { %>
         <!-- Buttons -->
@@ -22,12 +22,12 @@
 
           <!-- Log In -->
           <a href="/login">
-            <button class="log-in-btn">Log In</button>
+            <button class="header-btn log-in-btn">Log In</button>
           </a>
 
           <!-- Sign Up -->
           <a href="/signup">
-            <button class="sign-up-btn">Sign Up</button>
+            <button class="header-btn sign-up-btn">Sign Up</button>
           </a>
         </div>
       <% } %>
