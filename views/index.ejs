@@ -21,17 +21,25 @@
             You need to <a href="/login">log in</a> in order to create a post.
           </p>
         </div>
+      <% } else { %>
+        <!-- User Logged In -->
+        <a href="/posts/new">
+          <button class="create-post-btn">+ Create post</button>
+        </a>
+      <% } %>
 
-        <!-- Post -->
+      <!-- Post Grid -->
+      <div class="post-grid">
+        <!-- Each Post -->
         <% posts.forEach(post => { %>
           <div class="post">
             <!-- Users Info -->
-            <div class="users-info">
+            <!-- <div class="users-info">
               <h4><%= post.username %></h3>
               <h3><%= post.first_name %></h3>
               <h3><%= post.last_name %></h3>
               <p><%= post.created_at %></p>
-            </div>
+            </div> -->
 
             <!-- Users Text -->
             <div class="users-text">
@@ -40,13 +48,7 @@
             </div>
           </div>
         <% }) %>
-      <% } else { %>
-        <!-- User Logged In -->
-        <a href="/posts/new">
-          <button class="create-post-btn">+ Create post</button>
-        </a>
-        <h1>Posts</h1>
-      <% } %>
+      </div>
     </section>
 
     <!-- Footer -->
