@@ -9,11 +9,13 @@ exports.renderPostForm = async function (req, res) {
 exports.handleNewPostSubmission = async function (req, res, next) {
   try {
     // Destructure req.body
-    const { title, message } = req.body;
+    const { member_id, title, message, created_at } = req.body;
     // New Post Object
     const newPost = {
+      member_id,
       title,
       message,
+      created_at,
     };
 
     // Add New Post Object into DB

@@ -44,6 +44,15 @@ exports.getAllPosts = async function () {
   return rows;
 };
 
+// GET POSTS WITH AUTHORS INFO
+exports.getPostsWithUsersInfo = async function () {
+  const { rows } = await pool.query(
+    "SELECT posts.title, posts.message, posts.created_at, members.first_name, members.last_name FROM posts LEFT JOIN members ON members.id = posts.member_id",
+  );
+
+  return rows;
+};
+
 // GET POST BY ID
 exports.getPostsById = async function (id) {
   const { rows } = await pool.query("SELECT * FROM posts WHERE id = $1", [id]);
@@ -54,8 +63,8 @@ exports.getPostsById = async function (id) {
 
 // ADD POSTS DATA TO DB
 exports.addPostsDataToDb = async function (newPost) {
-  await pool.query("INSERT INTO posts (title, message) VALUES ($1, $2)", [
-    newPost.title,
-    newPost.message,
-  ]);
+  await pool.query(
+    "INSERT INTO posts (member_id, title, message, created_at) VALUES ($1, $2, $3, $4)",
+    [newPost.member_id, newPost.title, newPost.message, newPost.created_at],
+  );
 };
