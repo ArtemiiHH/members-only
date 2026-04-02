@@ -2,9 +2,7 @@ const db = require("../db/queries");
 
 // Render New Post Form (GET)
 exports.renderPostForm = async function (req, res) {
-  const posts = await db.getAllPosts();
-
-  res.render("newPost", { posts: posts });
+  res.render("newPost");
 };
 
 // Handle Form Submission (POST)
