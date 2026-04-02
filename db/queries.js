@@ -1,5 +1,6 @@
 const pool = require("./pool");
 
+// USERS
 // GET USER BY USERNAME
 exports.getUserByUsername = async function (username) {
   const { rows } = await pool.query(
@@ -33,6 +34,14 @@ exports.addUsersDataToDb = async function (newUser) {
       newUser.password,
     ],
   );
+};
+
+// POSTS
+// GET ALL POSTS
+exports.getAllPosts = async function () {
+  const { rows } = await pool.query("SELECT * FROM posts");
+
+  return rows;
 };
 
 // GET POST BY ID
