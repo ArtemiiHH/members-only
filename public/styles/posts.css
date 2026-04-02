@@ -1,0 +1,33 @@
+.post-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+  border: 1px solid black;
+  border-radius: 20px;
+  gap: 30px;
+}
+
+.users-info {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 20px;
+}
+
+.users-text {
+  padding: 20px;
+}
+
+.first-last-names {
+  display: flex;
+  gap: 20px;
+}

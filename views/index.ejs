@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index</title>
     <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/posts.css">
   </head>
   <body>
     <!-- Header -->
@@ -37,13 +38,17 @@
             <!-- Users Info -->
             <div class="users-info">
               <% if (!user) { %>
-                <p>Unknown user</p>
-                <p>*****</p>
-                <p>*****</p>
+                <p><strong>Unknown user</strong></p>
+                <div class="first-last-names">
+                  <p>*****</p>
+                  <p>*****</p>
+                </div>
               <% } else { %>
-                <p><%= s.username %></p>
-                <p><%= post.first_name %></p>
-                <p><%= post.last_name %></p>
+                <p><strong><%= post.username %></strong></p>
+                <div class="first-last-names">
+                  <p><%= post.first_name %></p>
+                  <p><%= post.last_name %></p>
+                </div>
               <% } %>
             </div>
 
