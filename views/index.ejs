@@ -41,13 +41,13 @@
             <!-- Users Info -->
             <div class="users-info">
               <% if (!user) { %>
-                <p><strong>Unknown user</strong></p>
+                <p><strong>@Unknown user</strong></p>
                 <div class="first-last-names">
                   <p>*****</p>
                   <p>*****</p>
                 </div>
               <% } else { %>
-                <p><strong><%= post.username %></strong></p>
+                <p><strong>@<%= post.username %></strong></p>
                 <div class="first-last-names">
                   <p><%= post.first_name %></p>
                   <p><%= post.last_name %></p>
