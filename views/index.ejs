@@ -34,6 +34,19 @@
         <% posts.forEach(post => { %>
           <div class="post">
 
+            <!-- Users Info -->
+            <div class="users-info">
+              <% if (!user) { %>
+                <p>Unknown user</p>
+                <p>*****</p>
+                <p>*****</p>
+              <% } else { %>
+                <p><%= s.username %></p>
+                <p><%= post.first_name %></p>
+                <p><%= post.last_name %></p>
+              <% } %>
+            </div>
+
             <!-- Users Text -->
             <div class="users-text">
               <h2><%= post.title %></h2>
