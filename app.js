@@ -5,6 +5,7 @@ const path = require("node:path");
 const session = require("express-session");
 const passport = require("passport");
 require("./config/passport")(passport);
+require("dotenv").config();
 
 // Routers
 const indexRouter = require("./routes/indexRouter");
@@ -23,7 +24,13 @@ app.use(flash());
 app.use(express.static("public"));
 
 // Setup passport
-app.use(session({ secret: "cats", resave: false, saveUninitialized: false }));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  }),
+);
 app.use(passport.session());
 // Parse URL form data
 app.use(express.urlencoded({ extended: false }));
