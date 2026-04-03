@@ -4,42 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New Post</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/form.css" />
   </head>
   <body>
-    <!-- New Post Form -->
-    <form action="/posts/new" method="POST">
-      <h2>Create new post</h2>
+    <section class="form-container">
+      <!-- New Post Form -->
+      <form action="/posts/new" method="POST">
+        <h2>Create new post</h2>
 
-      <label for="title">Title:</label>
-      <input
-        id="title"
-        name="title"
-        class="form-input"
-        placeholder="Title"
-        type="text"
-      />
+        <label for="title">Title:</label>
+        <input
+          id="title"
+          name="title"
+          class="form-input"
+          placeholder="Title"
+          type="text"
+        />
 
-      <label for="message">Message:</label>
-      <input
-        id="message"
-        name="message"
-        class="form-input"
-        placeholder="Your text here..."
-        type="text"
-      />
+        <label for="message">Message:</label>
+        <input
+          id="message"
+          name="message"
+          class="form-input"
+          placeholder="Your text here..."
+          type="text"
+        />
 
-      <!-- Form Buttons -->
-      <div class="form-btns">
-        <!-- Post -->
-        <a href="/">
-          <button type="submit">Post</button>
-        </a>
+        <!-- Form Buttons -->
+        <div class="form-btns">
+          <!-- Post -->
+          <a href="/">
+            <button class="form-btn" type="submit">Post</button>
+          </a>
 
-        <!-- Cancel -->
-        <a href="/">
-          <button type="button">Cancel</button>
-        </a>
-      </div>
-    </form>
+          <!-- Cancel -->
+          <a href="/">
+            <button class="form-btn" type="button">Cancel</button>
+          </a>
+        </div>
+      </form>
+    </section>
   </body>
 </html>

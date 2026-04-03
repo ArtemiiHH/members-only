@@ -37,30 +37,24 @@
         <!-- Each Post -->
         <% posts.forEach(post => { %>
           <div class="post">
-
-            <!-- Users Info -->
-            <div class="users-info">
-              <% if (!user) { %>
-                <p><strong>@Unknown user</strong></p>
-                <div class="first-last-names">
-                  <p>*****</p>
-                  <p>*****</p>
-                </div>
-              <% } else { %>
-                <p><strong>@<%= post.username %></strong></p>
-                <div class="first-last-names">
-                  <p><%= post.first_name %></p>
-                  <p><%= post.last_name %></p>
-                </div>
-              <% } %>
+            <!-- Users Text -->
+            <div class="users-text">
+              <h2><%= post.title %></h2>
+              <hr>
+              <p><%= post.message %></p>
             </div>
 
             <hr>
 
-            <!-- Users Text -->
-            <div class="users-text">
-              <h2><%= post.title %></h2>
-              <p><%= post.message %></p>
+            <!-- Users Info -->
+            <div class="users-info">
+              <% if (!user) { %>
+                <p><strong>@unknown</strong></p>
+                <p>?? : ??</p>
+              <% } else { %>
+                <p><strong>@<%= post.username %></strong></p>
+                <p><%= post.created_at %></p>
+              <% } %>
             </div>
           </div>
         <% }) %>
