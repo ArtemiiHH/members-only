@@ -10,7 +10,7 @@
   <body>
     <section class="form-container">
       <!-- Sign Up Form -->
-      <form action="/signup" method="POST">
+      <form class="sign-up-form" action="/signup" method="POST">
         <h2 class="form-title">Sign Up</h2>
 
         <!-- Error Message -->
@@ -20,23 +20,29 @@
           </div>
         <% } %>
 
-        <label for="firstName">First name:</label>
-        <input
-          id="firstName"
-          name="firstName"
-          class="form-input"
-          placeholder="John"
-          type="text"
-        />
+        <div class="name-inputs">
+          <div class="input-group">
+            <label for="firstName">First name:</label>
+            <input
+              id="firstName"
+              name="firstName"
+              class="form-input"
+              placeholder="John"
+              type="text"
+            />
+          </div>
 
-        <label for="lastName">Last name:</label>
-        <input
-          id="lastName"
-          name="lastName"
-          class="form-input"
-          placeholder="Doe"
-          type="text"
-        />
+          <div class="input-group">
+            <label for="lastName">Last name:</label>
+            <input
+              id="lastName"
+              name="lastName"
+              class="form-input"
+              placeholder="Doe"
+              type="text"
+            />
+          </div>
+        </div>
 
         <label for="username">Username:</label>
         <input
