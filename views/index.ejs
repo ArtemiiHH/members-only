@@ -23,13 +23,26 @@
             You need to <a href="/login">log in</a> in order to create a post.
           </p>
         </div>
-        <h1 class="latest-posts-text">Latest posts</h1>
+        <div class="latest">
+          <h1>Latest posts</h1>
+        </div>
       <% } else { %>
-        <h1 class="latest-posts-text">Latest posts</h1>
-        <!-- User Logged In -->
-        <a href="/posts/new">
-          <button class="header-btn create-post-btn">+ CREATE POST</button>
-        </a>
+        <!-- Log In Disclaimer -->
+        <div class="disclaimer">
+          <p>
+            Logged in as 
+            <% posts.forEach(post => { %>
+              <strong><%= post.username %></strong>
+            <% }) %>
+          </p>
+        </div>
+        <div class="latest">
+          <h1>Latest posts</h1>
+          <!-- User Logged In -->
+          <a href="/posts/new">
+            <button class="header-btn create-post-btn">+ CREATE POST</button>
+          </a>
+        </div>
       <% } %>
 
       <!-- Post Grid -->
