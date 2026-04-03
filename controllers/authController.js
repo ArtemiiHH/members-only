@@ -7,14 +7,22 @@ const passport = require("passport");
 // Sign Up
 // Render Sign Up Form (GET)
 exports.renderSignUpForm = async function (req, res) {
-  res.render("sign-up-form");
+  res.render("sign-up-form", { error: req.flash("error") });
 };
 
 // Handle Form Submission (POST)
 exports.handleSignUpSubmission = async function (req, res, next) {
   try {
     // Destructure req.body
-    const { firstName, lastName, username, email, password } = req.body;
+    const { firstName, lastName, username, email, password, confirmPassword } =
+      req.body;
+
+    // Check if password matches confirm password
+    if (password !== confirmPassword) {
+      req.flash("error", "Passwords must be the same");
+      return res.redirect("/signup");
+    }
+
     // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
     // New User Object

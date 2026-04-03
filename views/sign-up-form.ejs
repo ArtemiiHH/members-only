@@ -13,6 +13,13 @@
       <form action="/signup" method="POST">
         <h2 class="form-title">Sign Up</h2>
 
+        <!-- Error Message -->
+        <% if (error.length > 0) { %>
+          <div class="error-message">
+            <p><%= error %></p>
+          </div>
+        <% } %>
+
         <label for="firstName">First name:</label>
         <input
           id="firstName"
