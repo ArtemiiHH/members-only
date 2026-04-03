@@ -30,10 +30,7 @@
         <!-- Log In Disclaimer -->
         <div class="disclaimer">
           <p>
-            Logged in as 
-            <% posts.forEach(post => { %>
-              <strong><%= post.username %></strong>
-            <% }) %>
+            Logged in as <strong><%= user.username %></strong>
           </p>
         </div>
         <div class="latest">

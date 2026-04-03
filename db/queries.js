@@ -47,7 +47,7 @@ exports.getAllPosts = async function () {
 // GET POSTS WITH AUTHORS INFO
 exports.getPostsWithUsersInfo = async function () {
   const { rows } = await pool.query(
-    "SELECT posts.title, posts.message, posts.created_at, members.username, members.first_name, members.last_name FROM posts LEFT JOIN members ON members.id = posts.member_id",
+    "SELECT posts.title, posts.message, TO_CHAR(posts.created_at, 'DD-MM-YYYY HH24:MI') AS created_at, members.username, members.first_name, members.last_name FROM posts LEFT JOIN members ON members.id = posts.member_id",
   );
 
   return rows;
