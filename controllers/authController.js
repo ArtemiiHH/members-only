@@ -11,8 +11,12 @@ exports.renderSignUpForm = async function (req, res) {
 exports.handleSignUpSubmission = async function (req, res, next) {
   try {
     // Destructure req.body
-    const { firstName, lastName, username, email, password, confirmPassword } =
-      req.body;
+    const { password, confirmPassword } = req.body;
+    // Trim input data, to prevent white spaces
+    const firstName = req.body.firstName.trim();
+    const lastName = req.body.firstName.trim();
+    const username = req.body.firstName.trim();
+    const email = req.body.firstName.trim();
 
     // Check if user already exists
     const existingUser = await db.getUserByUsername(username);
