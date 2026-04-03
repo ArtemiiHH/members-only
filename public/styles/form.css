@@ -67,12 +67,22 @@ form p {
   background-color: rgb(20, 20, 20);
   border: 1px solid rgb(20, 20, 20);
   border-radius: 10px;
+  transition: 0.5s;
 }
 
 .form-input[placeholder] {
   font-size: 1.1rem;
   padding-left: 15px;
-  color: gray;
+  color: rgb(171, 171, 171);
+}
+
+.form-input::placeholder {
+  color: rgb(50, 50, 50);
+}
+
+.form-input:focus {
+  outline: none;
+  border: 1px solid rgb(50, 50, 50);
 }
 
 .input-group {

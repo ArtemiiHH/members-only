@@ -4,7 +4,11 @@ const bcrypt = require("bcryptjs");
 // Sign Up
 // Render Sign Up Form (GET)
 exports.renderSignUpForm = async function (req, res) {
-  res.render("sign-up-form", { error: req.flash("error") });
+  const data = req.flash("data")[0];
+  res.render("sign-up-form", {
+    error: req.flash("error"),
+    data: data ? JSON.parse(data) : {},
+  });
 };
 
 // Handle Form Submission (POST)
@@ -14,14 +18,18 @@ exports.handleSignUpSubmission = async function (req, res, next) {
     const { password, confirmPassword } = req.body;
     // Trim input data, to prevent white spaces
     const firstName = req.body.firstName.trim();
-    const lastName = req.body.firstName.trim();
-    const username = req.body.firstName.trim();
-    const email = req.body.firstName.trim();
+    const lastName = req.body.lastName.trim();
+    const username = req.body.username.trim();
+    const email = req.body.email.trim();
 
     // Check if user already exists
     const existingUser = await db.getUserByUsername(username);
     if (existingUser) {
       req.flash("error", "User already exists");
+      req.flash(
+        "data",
+        JSON.stringify({ firstName, lastName, username, email }),
+      );
       return res.redirect("/signup");
     }
 
@@ -29,30 +37,54 @@ exports.handleSignUpSubmission = async function (req, res, next) {
     const existingEmail = await db.getUserByEmail(email);
     if (existingEmail) {
       req.flash("error", "Email already exists");
+      req.flash(
+        "data",
+        JSON.stringify({ firstName, lastName, username, email }),
+      );
       return res.redirect("/signup");
     }
 
     // Check if password matches confirm password
     if (password !== confirmPassword) {
       req.flash("error", "Passwords must be the same");
+      req.flash(
+        "data",
+        JSON.stringify({ firstName, lastName, username, email }),
+      );
       return res.redirect("/signup");
     }
 
     // Password checks (REGEX)
     if (password.length < 8) {
       req.flash("error", "Password must be at least 8 characters");
+      req.flash(
+        "data",
+        JSON.stringify({ firstName, lastName, username, email }),
+      );
       return res.redirect("/signup");
     }
     if (!/[A-Z]/.test(password)) {
       req.flash("error", "Password must contain at least one uppercase letter");
+      req.flash(
+        "data",
+        JSON.stringify({ firstName, lastName, username, email }),
+      );
       return res.redirect("/signup");
     }
     if (!/[0-9]/.test(password)) {
       req.flash("error", "Password must be at least one number");
+      req.flash(
+        "data",
+        JSON.stringify({ firstName, lastName, username, email }),
+      );
       return res.redirect("/signup");
     }
     if (!/[!@#$%^&*]/.test(password)) {
       req.flash("error", "Password must be at least one special character");
+      req.flash(
+        "data",
+        JSON.stringify({ firstName, lastName, username, email }),
+      );
       return res.redirect("/signup");
     }
 
