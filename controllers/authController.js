@@ -34,6 +34,24 @@ exports.handleSignUpSubmission = async function (req, res, next) {
       return res.redirect("/signup");
     }
 
+    // Password checks (REGEX)
+    if (password.length < 8) {
+      req.flash("error", "Password must be at least 8 characters");
+      return res.redirect("/signup");
+    }
+    if (!/[A-Z]/.test(password)) {
+      req.flash("error", "Password must contain at least one uppercase letter");
+      return res.redirect("/signup");
+    }
+    if (!/[0-9]/.test(password)) {
+      req.flash("error", "Password must be at least one number");
+      return res.redirect("/signup");
+    }
+    if (!/[!@#$%^&*]/.test(password)) {
+      req.flash("error", "Password must be at least one special character");
+      return res.redirect("/signup");
+    }
+
     // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
     // New User Object
