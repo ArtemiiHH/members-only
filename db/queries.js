@@ -56,18 +56,10 @@ exports.getAllPosts = async function () {
 // GET POSTS WITH AUTHORS INFO
 exports.getPostsWithUsersInfo = async function () {
   const { rows } = await pool.query(
-    "SELECT posts.title, posts.message, TO_CHAR(posts.created_at, 'DD-MM-YYYY HH24:MI') AS created_at, members.username, members.first_name, members.last_name FROM posts LEFT JOIN members ON members.id = posts.member_id",
+    "SELECT posts.title, posts.message, TO_CHAR(posts.created_at, 'DD-MM-YYYY HH24:MI') AS created_at, members.username, members.first_name, members.last_name FROM posts LEFT JOIN members ON members.id = posts.member_id ORDER BY created_at DESC",
   );
 
   return rows;
-};
-
-// GET POST BY ID
-exports.getPostsById = async function (id) {
-  const { rows } = await pool.query("SELECT * FROM posts WHERE id = $1", [id]);
-
-  // Return single post
-  return rows[0];
 };
 
 // ADD POSTS DATA TO DB

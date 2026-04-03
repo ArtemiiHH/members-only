@@ -8,20 +8,21 @@
 .post-grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
-  padding: 20px 50px;
-  height: 100vh;
+  padding: 50px 50px;
 }
 
 .post {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-color: black;
   border: 1px solid rgb(20, 20, 20);
   border-radius: 20px;
   padding: 30px;
-  width: 300px;
-  height: fit-content;
+  width: 250px;
+  height: auto;
 }
 
 .users-info {
@@ -36,14 +37,11 @@
 
 .users-info p {
   font-size: 0.9rem;
+  height: 100%;
 }
 
 .users-text {
   padding: 0;
-}
-
-.users-text h2 {
-  padding-bottom: 20px;
 }
 
 .users-text p {
