@@ -40,7 +40,7 @@ exports.handleSignUpSubmission = async function (req, res, next) {
 // Log In
 // Render Log In Form (GET)
 exports.renderLogInForm = async function (req, res) {
-  res.render("log-in-form");
+  res.render("log-in-form", { error: req.flash("error") });
 };
 
 // Handle Form Submission (POST)
@@ -53,6 +53,8 @@ exports.handleLogInSubmission = async function (req, res, next) {
 
     // Check if user exists
     if (!user) {
+      // Display message
+      req.flash("error", "User does not exist");
       return res.redirect("/login");
     }
 
@@ -61,6 +63,8 @@ exports.handleLogInSubmission = async function (req, res, next) {
 
     // Compare password against hash
     if (!match) {
+      // Display message
+      req.flash("error", "Incorrect password");
       return res.redirect("/login");
     }
 

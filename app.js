@@ -15,6 +15,10 @@ const postRouter = require("./routes/postRouter");
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+// Setup flash for form error messages
+const flash = require("connect-flash");
+app.use(flash());
+
 // Read static files
 app.use(express.static("public"));
 
