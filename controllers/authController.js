@@ -17,6 +17,20 @@ exports.handleSignUpSubmission = async function (req, res, next) {
     const { firstName, lastName, username, email, password, confirmPassword } =
       req.body;
 
+    // Check if user already exists
+    const existingUser = await db.getUserByUsername(username);
+    if (existingUser) {
+      req.flash("error", "User already exists");
+      return res.redirect("/signup");
+    }
+
+    // Check if email already exists
+    const existingEmail = await db.getUserByEmail(email);
+    if (existingEmail) {
+      req.flash("error", "Email already exists");
+      return res.redirect("/signup");
+    }
+
     // Check if password matches confirm password
     if (password !== confirmPassword) {
       req.flash("error", "Passwords must be the same");

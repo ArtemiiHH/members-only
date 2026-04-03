@@ -12,6 +12,15 @@ exports.getUserByUsername = async function (username) {
   return rows[0];
 };
 
+exports.getUserByEmail = async function (email) {
+  const { rows } = await pool.query("SELECT * FROM members WHERE email = $1", [
+    email,
+  ]);
+
+  // Return single email
+  return rows[0];
+};
+
 // GET USER BY ID
 exports.getUserById = async function (id) {
   const { rows } = await pool.query("SELECT * FROM members WHERE id = $1", [
