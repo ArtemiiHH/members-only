@@ -4,81 +4,84 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
     <link rel="stylesheet" href="/styles/form.css" />
   </head>
   <body>
-    <!-- Sign Up Form -->
-    <form action="/signup" method="POST">
-      <h2>Sign Up</h2>
+    <section class="form-container">
+      <!-- Sign Up Form -->
+      <form action="/signup" method="POST">
+        <h2 class="form-title">Sign Up</h2>
 
-      <label for="firstName">First name:</label>
-      <input
-        id="firstName"
-        name="firstName"
-        class="form-input"
-        placeholder="John"
-        type="text"
-      />
+        <label for="firstName">First name:</label>
+        <input
+          id="firstName"
+          name="firstName"
+          class="form-input"
+          placeholder="John"
+          type="text"
+        />
 
-      <label for="lastName">Last name:</label>
-      <input
-        id="lastName"
-        name="lastName"
-        class="form-input"
-        placeholder="Doe"
-        type="text"
-      />
+        <label for="lastName">Last name:</label>
+        <input
+          id="lastName"
+          name="lastName"
+          class="form-input"
+          placeholder="Doe"
+          type="text"
+        />
 
-      <label for="username">Username:</label>
-      <input
-        id="username"
-        name="username"
-        class="form-input"
-        placeholder="jd123"
-        type="text"
-      />
+        <label for="username">Username:</label>
+        <input
+          id="username"
+          name="username"
+          class="form-input"
+          placeholder="jd123"
+          type="text"
+        />
 
-      <label for="email">Email:</label>
-      <input
-        id="email"
-        name="email"
-        class="form-input"
-        placeholder="example@gmail.com"
-        type="email"
-      />
+        <label for="email">Email:</label>
+        <input
+          id="email"
+          name="email"
+          class="form-input"
+          placeholder="example@gmail.com"
+          type="email"
+        />
 
-      <label for="password">Password:</label>
-      <input
-        id="password"
-        name="password"
-        class="form-input"
-        placeholder="Create password"
-        type="password"
-      />
+        <label for="password">Password:</label>
+        <input
+          id="password"
+          name="password"
+          class="form-input"
+          placeholder="Create password"
+          type="password"
+        />
 
-      <label for="confirmPassword">Confirm password:</label>
-      <input
-        id="confirmPassword"
-        name="confirmPassword"
-        class="form-input"
-        placeholder="Confirm password"
-        type="password"
-      />
+        <label for="confirmPassword">Confirm password:</label>
+        <input
+          id="confirmPassword"
+          name="confirmPassword"
+          class="form-input"
+          placeholder="Confirm password"
+          type="password"
+        />
 
-      <!-- Form Buttons -->
-      <div class="form-btns">
-        <!-- Sign Up -->
-        <button type="submit">Sign Up</button>
+        <!-- Form Buttons -->
+        <div class="form-btns">
+          <!-- Sign Up -->
+          <button class="form-btn" type="submit">Sign Up</button>
 
-        <!-- Back to home -->
-        <a href="/">
-          <button type="button">Back to home</button>
-        </a>
-      </div>
-    </form>
+          <!-- Back to home -->
+          <a href="/">
+            <button class="form-btn" type="button">Back to home</button>
+          </a>
+        </div>
 
-    <hr />
+        <hr />
 
-    <p>Already have an account? <a href="/login">Log In</a></p>
+        <p class="dont-have-acc">Already have an account? <a href="/login">Log In</a></p>
+      </form>
+    </section>
   </body>
 </html>

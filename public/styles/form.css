@@ -1,5 +1,86 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: auto;
+}
+
 form {
   display: flex;
   flex-direction: column;
+  gap: 15px;
+  height: auto;
+  width: 400px;
+  padding: 40px;
+  border: 1px solid rgb(20, 20, 20);
+  border-radius: 10px;
+  margin: 50px;
+}
+
+form p {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.form-title {
+  padding-bottom: 20px;
+  font-size: 1.7rem;
+}
+
+.form-btns {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
+  padding-top: 30px;
+}
+
+.form-btns a * {
+  width: 100%;
+}
+
+.form-btn {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 30px;
+  border: 1px solid rgb(20, 20, 20);
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  transition: 0.3s;
+}
+
+.form-btn:hover {
+  background-color: rgb(20, 20, 20);
+  cursor: pointer;
+}
+
+.form-input {
+  height: 40px;
+  width: auto;
+  background-color: rgb(20, 20, 20);
+  border: 1px solid rgb(20, 20, 20);
+  border-radius: 10px;
+}
+
+.form-input[placeholder] {
+  font-size: 1.1rem;
+  padding-left: 15px;
+  color: gray;
+}
+
+hr {
+  width: 100%;
+  border: 1px solid rgb(20, 20, 20);
+}
+
+.dont-have-acc a {
+  color: rgb(5, 118, 156);
+  text-decoration: underline;
+}
+
+.dont-have-acc a:hover {
+  opacity: 0.8;
 }

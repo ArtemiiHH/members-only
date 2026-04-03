@@ -4,45 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log In</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
     <link rel="stylesheet" href="/styles/form.css" />
   </head>
   <body>
-    <!-- Log In Form -->
-    <form action="/login" method="POST">
-      <h2>Log In</h2>
+    <section class="form-container">
+      <!-- Log In Form -->
+      <form action="/login" method="POST">
+        <h2 class="form-title">Log In</h2>
 
-      <label for="username">Username:</label>
-      <input
-        id="username"
-        name="username"
-        class="form-input"
-        placeholder="Username"
-        type="text"
-      />
+        <label for="username">Username:</label>
+        <input
+          id="username"
+          name="username"
+          class="form-input"
+          placeholder="Username"
+          type="text"
+        />
 
-      <label for="password">Password:</label>
-      <input
-        id="password"
-        name="password"
-        class="form-input"
-        placeholder="Password"
-        type="password"
-      />
+        <label for="password">Password:</label>
+        <input
+          id="password"
+          name="password"
+          class="form-input"
+          placeholder="Password"
+          type="password"
+        />
 
-      <!-- Form Buttons -->
-      <div class="form-btns">
-        <!-- Sign Up -->
-        <button type="submit">Log In</button>
+        <!-- Form Buttons -->
+        <div class="form-btns">
+          <!-- Sign Up -->
+          <button class="form-btn" type="submit">Log In</button>
 
-        <!-- Back to home -->
-        <a href="/">
-          <button type="button">Back to home</button>
-        </a>
-      </div>
-    </form>
+          <!-- Back to home -->
+          <a href="/">
+            <button class="form-btn" type="button">Back to home</button>
+          </a>
+        </div>
 
-    <hr />
+        <hr />
 
-    <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+        <p class="dont-have-acc">Don't have an account? <a href="/signup">Sign Up</a></p>
+      </form>
+    </section>
   </body>
 </html>
