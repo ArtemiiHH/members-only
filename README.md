@@ -1,6 +1,6 @@
 # Members Only
 
-🔗 [Live Demo](https://members-only.up.railway.app)
+🔗 [Live Demo](https://members-only-club.onrender.com)
 
 A simple members-only messaging app built with Node.js, Express, and PostgreSQL.
 Users can sign up, log in, and create posts. Post authors are hidden from guests —
