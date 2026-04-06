@@ -56,7 +56,7 @@ exports.handleSignUpSubmission = async function (req, res, next) {
 
     // Password checks (REGEX)
     if (password.length < 8) {
-      req.flash("error", "Password must be at least 8 characters");
+      req.flash("error", "Password must be at least 8 characters long");
       req.flash(
         "data",
         JSON.stringify({ firstName, lastName, username, email }),
@@ -72,7 +72,7 @@ exports.handleSignUpSubmission = async function (req, res, next) {
       return res.redirect("/signup");
     }
     if (!/[0-9]/.test(password)) {
-      req.flash("error", "Password must be at least one number");
+      req.flash("error", "Password must contain at least one number");
       req.flash(
         "data",
         JSON.stringify({ firstName, lastName, username, email }),
@@ -80,7 +80,10 @@ exports.handleSignUpSubmission = async function (req, res, next) {
       return res.redirect("/signup");
     }
     if (!/[!@#$%^&*]/.test(password)) {
-      req.flash("error", "Password must be at least one special character");
+      req.flash(
+        "error",
+        "Password must contain at least one special character",
+      );
       req.flash(
         "data",
         JSON.stringify({ firstName, lastName, username, email }),
@@ -127,7 +130,7 @@ exports.handleLogInSubmission = async function (req, res, next) {
     // Check if user exists
     if (!user) {
       // Display message
-      req.flash("error", "User does not exist");
+      req.flash("error", "The login information provided is incorrect");
       return res.redirect("/login");
     }
 
@@ -137,7 +140,7 @@ exports.handleLogInSubmission = async function (req, res, next) {
     // Compare password against hash
     if (!match) {
       // Display message
-      req.flash("error", "Incorrect password");
+      req.flash("error", "The login information provided is incorrect");
       return res.redirect("/login");
     }
 
